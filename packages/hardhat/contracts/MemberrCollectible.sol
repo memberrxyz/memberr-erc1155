@@ -6,25 +6,25 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Supply.sol";
 
 contract MemberrCollectible is 
-    ERC1155, 
-    Ownable, 
-    ERC1155Supply 
+    ERC1155,
+    Ownable,
+    ERC1155Supply
 {
     constructor() ERC1155("https://memberr.xyz/token/{id}.json") {}
 
     function setURI(
         string memory newuri
-    ) 
-        public 
-        onlyOwner 
+    )
+        public
+        onlyOwner
     {
         _setURI(newuri);
     }
 
     function mint(
-        address account, 
-        uint256 id, 
-        uint256 amount, 
+        address account,
+        uint256 id,
+        uint256 amount,
         bytes memory data
     )
         public
@@ -34,9 +34,9 @@ contract MemberrCollectible is
     }
 
     function mintBatch(
-        address to, 
-        uint256[] memory ids, 
-        uint256[] memory amounts, 
+        address to,
+        uint256[] memory ids,
+        uint256[] memory amounts,
         bytes memory data
     )
         public
@@ -49,10 +49,10 @@ contract MemberrCollectible is
 
     function _beforeTokenTransfer(
         address operator,
-        address from, 
-        address to, 
-        uint256[] memory ids, 
-        uint256[] memory amounts, 
+        address from,
+        address to,
+        uint256[] memory ids,
+        uint256[] memory amounts,
         bytes memory data
     )
         internal
