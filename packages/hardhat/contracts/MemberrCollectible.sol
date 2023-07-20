@@ -2,21 +2,57 @@
 pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Supply.sol";
+import "@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Burnable.sol";
 
 contract MemberrCollectible is 
     ERC1155,
-    Ownable,
-    ERC1155Supply
+    ERC1155Supply,
+    AccessControl,
+    ERC1155Burnable
 {
-    constructor() ERC1155("https://memberr.xyz/token/{id}.json") {}
+    bytes32 public constant URI_SETTER_ROLE = keccak256("URI_SETTER_ROLE");
+    bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
+    string private _contractUri;
 
-    function setURI(
+    constructor(
+        string memory contractUri,
+        string memory tokenUri
+    ) ERC1155(tokenUri) {
+        _setContractURI(contractUri);
+        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
+        _grantRole(URI_SETTER_ROLE, msg.sender);
+        _grantRole(MINTER_ROLE, msg.sender);
+    }
+
+    function contractURI() public view returns (string memory) {
+        return _contractUri;
+    }
+
+    function setContractURI(
+        string memory newContractUri
+    )
+        public
+        onlyRole(URI_SETTER_ROLE)
+    {
+        _setContractURI(newContractUri);
+    }
+
+    function _setContractURI(
+        string memory newContractUri
+    ) 
+        internal 
+        virtual 
+    {
+        _contractUri = newContractUri;
+    }
+
+    function setTokenURI(
         string memory newuri
     )
         public
-        onlyOwner
+        onlyRole(URI_SETTER_ROLE)
     {
         _setURI(newuri);
     }
@@ -28,7 +64,7 @@ contract MemberrCollectible is
         bytes memory data
     )
         public
-        onlyOwner
+        onlyRole(MINTER_ROLE)
     {
         _mint(account, id, amount, data);
     }
@@ -40,10 +76,12 @@ contract MemberrCollectible is
         bytes memory data
     )
         public
-        onlyOwner
+        onlyRole(MINTER_ROLE)
     {
         _mintBatch(to, ids, amounts, data);
     }
+
+
 
     // The following functions are overrides required by Solidity.
 
@@ -60,4 +98,16 @@ contract MemberrCollectible is
     {
         super._beforeTokenTransfer(operator, from, to, ids, amounts, data);
     }
+
+    function supportsInterface(
+        bytes4 interfaceId
+    )
+        public
+        view
+        override(ERC1155, AccessControl)
+        returns (bool)
+    {
+        return super.supportsInterface(interfaceId);
+    }
+
 }

@@ -1,0 +1,24 @@
+{
+  "name": "Memberr Collectible - All Access Pass",
+  "description": "Memberr Collectible day 1 on the road to 100.",
+  "image": "https://staging.memberr.xyz/collectibles/images/1.jpeg",
+  "external_url": "https://staging.memberr.xyz/collectibles/metadata/1",
+  "attributes": [
+    {
+      "display_type": "number",
+      "trait_type": "Day",
+      "value": 1,
+      "max_value": 100
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Days Total",
+      "value": 100
+    },
+    {
+      "display_type": "string",
+      "trait_type": "Discount",
+      "value": "10%"
+    }
+  ]
+}

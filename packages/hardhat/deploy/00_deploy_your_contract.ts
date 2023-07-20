@@ -22,9 +22,12 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
   const { deploy } = hre.deployments;
   console.log({ deployer });
 
+  const contractUri = "https://staging.memberr.xyz/collectibles/metadata/contract_info.json";
+  const tokenUri = "https://staging.memberr.xyz/collectibles/metadata/{id}.json";
+
   await deploy("MemberrCollectible", {
     from: deployer,
-    args: [],
+    args: [contractUri, tokenUri],
     log: true,
     // autoMine: can be passed to the deploy function to make the deployment process faster on local networks by
     // automatically mining the contract deployment transaction. There is no effect on live networks.
