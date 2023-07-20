@@ -1,8 +1,8 @@
 {
-  "name": "Memberr Collectible 1/100",
-  "description": "Memberr Collectible 1 on the road to 100.",
-  "image": "https://memberr.xyz/1.jpg",
-  "external_url": "https://memberr.xyz/1",
+  "name": "Memberr road to 100: 1/100",
+  "description": "Memberr Collectible #1 on the road to 100.",
+  "image": "https://staging.memberr.xyz/collectibles/1.jpg",
+  "external_url": "https://staging.memberr.xyz/collectibles/1",
   "attributes": [
     {
       "display_type": "number",
