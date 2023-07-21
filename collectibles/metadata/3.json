@@ -2,7 +2,7 @@
   "name": "Memberr Collectible - Day 3",
   "description": "Memberr Collectible day 3 on the road to 100.",
   "image": "https://staging.memberr.xyz/collectibles/images/3.jpeg",
-  "external_url": "https://staging.memberr.xyz/collectibles/metadata/3",
+  "external_url": "https://staging.memberr.xyz",
   "attributes": [
     {
       "display_type": "number",
