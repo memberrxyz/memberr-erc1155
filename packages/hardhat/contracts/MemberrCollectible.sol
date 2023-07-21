@@ -56,7 +56,7 @@ contract MemberrCollectible is
     }
 
     function mint(
-        address account,
+        address to,
         uint256 id,
         uint256 amount,
         bytes memory data
@@ -64,7 +64,7 @@ contract MemberrCollectible is
         public
         onlyRole(MINTER_ROLE)
     {
-        _mint(account, id, amount, data);
+        _mint(to, id, amount, data);
     }
 
     function mintBatch(
