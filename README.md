@@ -30,11 +30,10 @@ yarn verify --network polygon
 
 ## Deployments
 
-| Network | Contract Name | Address |
+| Network | Contract Name | Address | OpenSea |
 |---|---|---|
-| polygon | MemberrCollectible | [0xda5cdc2c494337f113c17ad99a9d50ac23a9b3c7](https://polygonscan.com/address/0xda5cdc2c494337f113c17ad99a9d50ac23a9b3c7) |
-| mumbai | MemberrERC1155Token | [0xxxx](https://mumbai.polygonscan.com/address/0xxx) |
-| goerli | TestCollectible | [0xd6663e685910707937e804df4fc117278c273862](https://goerli.etherscan.io/address/0xd6663e685910707937e804df4fc117278c273862) |
+| polygon | MemberrCollectible | [0xda5cdc2c494337f113c17ad99a9d50ac23a9b3c7](https://polygonscan.com/address/0xda5cdc2c494337f113c17ad99a9d50ac23a9b3c7) | |
+| goerli | MemberrCollectible | [0x59e4d9f56a67fcb8c9e5e2282605b261a8f3c91e](https://goerli.etherscan.io/address/0x59e4d9f56a67fcb8c9e5e2282605b261a8f3c91e) | [OpenSea](https://testnets.opensea.io/collection/memberr-collectibles) |
 
 ## License
 
