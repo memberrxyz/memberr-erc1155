@@ -16,8 +16,8 @@ contract MemberrCollectible is
     Ownable,
     AccessControl
 {
-    bytes32 public constant URI_SETTER_ROLE = keccak256("URI_SETTER_ROLE");
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
+    bytes32 public constant URI_SETTER_ROLE = keccak256("URI_SETTER_ROLE");
     string private _contractUri;
 
     constructor(
