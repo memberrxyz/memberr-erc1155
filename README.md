@@ -32,8 +32,8 @@ yarn verify --network polygon
 
 | Network | Contract Name | Address | OpenSea |
 |---|---|---|
-| polygon | MemberrCollectible | [0xda5cdc2c494337f113c17ad99a9d50ac23a9b3c7](https://polygonscan.com/address/0xda5cdc2c494337f113c17ad99a9d50ac23a9b3c7) | |
-| goerli | MemberrCollectible | [0x59e4d9f56a67fcb8c9e5e2282605b261a8f3c91e](https://goerli.etherscan.io/address/0x59e4d9f56a67fcb8c9e5e2282605b261a8f3c91e) | [OpenSea](https://testnets.opensea.io/collection/memberr-collectibles) |
+| polygon | MemberrCollectible | [0xf1fe0546b8662d6e51dc760659c304135b0ff448](https://polygonscan.com/address/0xf1fe0546b8662d6e51dc760659c304135b0ff448) | |
+| goerli | TestCollectible3 | [0x06D238118ea4Bb3B9Eb155119431Fa853822520F](https://goerli.etherscan.io/address/0x06D238118ea4Bb3B9Eb155119431Fa853822520F) | [OpenSea](https://testnets.opensea.io/collection/memberr-collectibles-2) |
 
 ## License
 
