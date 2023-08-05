@@ -8,13 +8,13 @@ The official memberr token.
 # install dependencies
 yarn install
 
-# start chain
+# start local chain
 yarn chain
 
-# deploy contracts
+# deploy contracts to local chain
 yarn deploy
 
-# deploy to a specific chain
+# deploy contracts to a specific chain
 yarn deploy --network goerli
 yarn deploy --network polygonMumbai
 yarn deploy --network polygon
